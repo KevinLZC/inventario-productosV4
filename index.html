@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Inventario de productos</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="">	
+		<script src="./inventario.js"></script>
+		<script src="./producto.js"></script>
+	</head>
+	<body>
+		<h1>INVENTARIO DE PRODUCTOS</h1>
+		<div id="agregarProducto">
+			<form id="frmProducto">
+				<fieldset>
+					<legend> PRODUCTO </legend>
+					<label for="codigo">Código:</label>
+					<input type="number" name="codigo" placeholder="1234" id="codigo"><br><br>
+					<label for="Nombre">Nombre:</label>
+					<input type="text" name="Nombre" placeholder="Refresco" id="nombre"><br><br>
+					<label for="cantidad">Cantidad:</label>
+					<input type="number" name="cantidad" placeholder="10" id="cantidad"><br><br>
+					<label for="costo">Costo:</label>
+					<input type="number" name="costo" placeholder="50" id="costo"><br><br>
+					<label for="posicion">Posición</label>
+					<input type="number" name="posicion" placeholder="1" id="posicion"><br><br>
+					<button type="button" id="btnAgregar">Agregar</button>
+					<button type="button" id="btnInsertar">Insertar</button>
+					<button type="button" id="btnBuscar">Buscar</button>
+					<button type="button" id="btnEliminar">Eliminar</button>
+					<button type="button" id="btnListar">Listar</button>
+					<button type="button" id="btnListarInverso">Listar Inverso</button>
+					<button type="button" id="btnLimpiar">Limpiar</button>
+				</fieldset>
+			</form>
+		</div>
+		<h2>ESTADO</h2>
+		<div id="resultado"></div>
+	<script src="./app.js"></script>
+	</body>
+</html>
