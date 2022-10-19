@@ -19,6 +19,7 @@ class Inventario {
 				aux=aux.siguiente;
 			}
 			aux.siguiente = nuevo;
+			nuevo.anterior = aux;
 			this.dimension++;
 			return true;
 		}	
@@ -85,6 +86,7 @@ class Inventario {
 		while(aux.siguiente !== null) {
 			if(aux.siguiente.codigo === codigo) {
 				aux.siguiente = aux.siguiente.siguiente;
+				aux.siguiente.anterior = aux;
 				this.dimension--;
 				return true;
 			}
