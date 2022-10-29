@@ -13,9 +13,21 @@ class Inventario {
 			this.primero = nuevo;
 			this.dimension++;
 			return true;
-		} else {
+		} else if(this.primero.codigo > nuevo.codigo) {
+			nuevo.siguiente = this.primero;
+			this.primero.anterior = nuevo;
+			this.primero = nuevo;
+			return true;
+		}else{
 			let aux = this.primero;
 			while (aux.siguiente !== null) {
+				if(aux.siguiente.codigo > nuevo.codigo) {
+					let tmp = aux.siguiente;
+					aux.siguiente = nuevo;
+					nuevo.anterior = aux;
+					nuevo.siguiente = tmp;
+					return true;
+				}
 				aux=aux.siguiente;
 			}
 			aux.siguiente = nuevo;
@@ -34,34 +46,6 @@ class Inventario {
 			aux = aux.siguiente;
 		}
 		return true;
-	}
-
-	insertar(nuevo, posicion) {
-		if((this.dimension === 0 && posicion < 0) || (this.dimension !== 0 && posicion > this.dimension)) {
-			return false;
-		}
-
-		if(this.primero === null) {
-			this.primero = nuevo;
-			return true;
-		} else if(posicion === 1) {
-			nuevo.siguiente = this.primero;
-			this.primero = nuevo;
-			return true;
-		} else {
-			let aux = this.primero;
-			let contador = 1;
-			while(contador !== posicion) {
-				if(contador + 1 === posicion) {
-					let tmp = aux;
-					nuevo.siguiente = aux.siguiente;
-					tmp.siguiente = nuevo;
-					return true
-				}
-				aux = aux.siguiente;
-				contador++;
-			}
-		} 		
 	}
 
 	buscar(codigo) {

@@ -16,7 +16,7 @@ agregar.addEventListener('click', () => {
 	}
 });
 
-const insertar = document.getElementById("btnInsertar");
+/*const insertar = document.getElementById("btnInsertar");
 insertar.addEventListener('click', () => {
 	let codigo = document.getElementById("codigo").valueAsNumber;
 	let nombre = document.getElementById("nombre").value;
@@ -29,7 +29,7 @@ insertar.addEventListener('click', () => {
 	} else if(!estado){
 		document.getElementById('resultado').innerHTML = "<p>Posición inválida</p>"
 	}
-})
+})*/
 
 const buscar = document.getElementById("btnBuscar");
 buscar.addEventListener('click', () => {
